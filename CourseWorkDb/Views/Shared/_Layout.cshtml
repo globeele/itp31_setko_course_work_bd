@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/favicon.ico" rel="icon" type="image/x-icon" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/user-form.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">CourseWork</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Предприятия</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-controller="Companies" asp-action="Index">Список</a>
+                                <a class="dropdown-item" asp-controller="Companies" asp-action="Create">Добавить</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Виды продукции</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-controller="ProductTypes" asp-action="Index">Список</a>
+                                <a class="dropdown-item" asp-controller="ProductTypes" asp-action="Create">Добавить</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Продукция</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-controller="Products" asp-action="Index">Список</a>
+                                <a class="dropdown-item" asp-controller="Products" asp-action="Create">Добавить</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Другое</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <h6 class="dropdown-header">Выпуск продукции</h6>
+                                <a class="dropdown-item" asp-controller="Outputs" asp-action="Index">Список</a>
+                                <a class="dropdown-item" asp-controller="Outputs" asp-action="Create">Добавить</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Реализация продукции</h6>
+                                <a class="dropdown-item" asp-controller="Releases" asp-action="Index">Список</a>
+                                <a class="dropdown-item" asp-controller="Releases" asp-action="Create">Добавить</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="Companies" asp-action="Comparison">Сравнение потребления</a>
+                                <a class="dropdown-item" asp-controller="Companies" asp-action="Violators">Нарушители норм потребления</a>
+                            </div>
+                        </li>
+
+                        @if (User.IsInRole(Roles.Admin))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Пользователи</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="Index">Список</a>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="Create">Добавить</a>
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+                    <form class="form-inline my-2 my-lg-0" method="post" asp-controller="Account" asp-action="LogOff">
+                        <input class="btn btn-outline-danger" type="submit" value="Выйти" />
+                    </form>
+                </div>
+        </nav>
+
+    </header>
+
+    <main role="main" class="pb-3" style="margin-left: 1%; margin-right: 1%;">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; CourseWork Dmitry Dashkevich 2019
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿@model IndexViewModel<Release>
+
+@addTagHelper "*, CourseWorkDb"
+
+@{
+    ViewData["Title"] = "Реализация продукции";
+}
+
+<br />
+<form asp-action="Index" method="get">
+    <div class="form-row col-md-8">
+        <div class="col-2">
+            <label class="control-label">Предприятие </label>
+        </div>
+        <div class="col-4">
+            @Html.DropDownList("company", Model.FilterViewModel.Companies as SelectList,
+                    htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-1">
+            <label class="control-label">Год </label>
+        </div>
+        <div class="col-3">
+            @Html.DropDownList("year", Model.FilterViewModel.Years as SelectList,
+                    htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col">
+            <input type="submit" value="Найти" class="btn btn-secondary" />
+        </div>
+    </div>
+</form>
+
+<br />
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Предприятие</th>
+                <th scope="col">Фактическая реализация продукции</th>
+                <th scope="col">План по реализации</th>
+                <th scope="col">Год</th>
+                <th scope="col">Квартал</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr onclick="window.location.href='/Releases/Details/@item.Id'; return false">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Company.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleaseFact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleasePlan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quarter)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<page-link page-model="Model.PageViewModel" page-action="Violators"
+           page-url-organization="@(Model.FilterViewModel.SelectedCompany)"
+           page-url-year="@(Model.FilterViewModel.SelectedYear)"></page-link>

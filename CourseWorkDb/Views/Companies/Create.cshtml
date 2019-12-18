@@ -1,0 +1,47 @@
+﻿@model CourseWorkDb.Models.Tables.Company
+
+@{
+    ViewData["Title"] = "Добавление";
+}
+
+<h4>Предприятие</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormOfOwnership" class="control-label"></label>
+                <input asp-for="FormOfOwnership" class="form-control" />
+                <span asp-validation-for="FormOfOwnership" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActivityType" class="control-label"></label>
+                <input asp-for="ActivityType" class="form-control" />
+                <span asp-validation-for="ActivityType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadName" class="control-label"></label>
+                <input asp-for="HeadName" class="form-control" />
+                <span asp-validation-for="HeadName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

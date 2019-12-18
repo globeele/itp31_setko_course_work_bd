@@ -1,0 +1,51 @@
+﻿@model CourseWorkDb.Models.Tables.Company
+
+@{
+    ViewData["Title"] = "Предприятие";
+}
+
+
+<h5>Предприятие</h5>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Edit">
+            <input type="hidden" asp-for="Id" readonly />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormOfOwnership" class="control-label"></label>
+                <input asp-for="FormOfOwnership" class="form-control" />
+                <span asp-validation-for="FormOfOwnership" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActivityType" class="control-label"></label>
+                <input asp-for="ActivityType" class="form-control" />
+                <span asp-validation-for="ActivityType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeadName" class="control-label"></label>
+                <input asp-for="HeadName" class="form-control" />
+                <span asp-validation-for="HeadName" class="text-danger"></span>
+            </div>
+           
+        </form>
+        <form method="post" asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Удалить" class="btn btn-danger" />
+        </form>
+    </div>
+</div>
+
+<br />
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

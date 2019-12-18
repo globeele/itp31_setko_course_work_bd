@@ -1,0 +1,57 @@
+﻿@model IndexViewModel<Company>
+
+@addTagHelper "*, CourseWorkDb"
+
+@{
+    ViewData["Title"] = "Список предприятийй";
+}
+
+<br/>
+<form asp-action="Index" method="get">
+    <div class="form-row col-md-6">
+
+        <div class="col">
+            <input type="text" name="searchByName" value="@ViewData["CurrentSearch"]" class="form-control" placeholder="Название предприятия" />
+        </div>
+        <div class="col">
+            <input type="submit" value="Найти" class="btn btn-secondary" />
+        </div>
+    </div>
+</form>
+
+<br />
+<div class="col">
+    <a class="btn btn-info" asp-action="Index">Полный список</a>
+</div>
+<br/>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Название предприятия</th>
+                <th scope="col">Тип производственной деятельности</th>
+                <th scope="col">ФИО Директора</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr onclick="window.location.href='/Companies/Details/@item.Id'; return false">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActivityType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HeadName)
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+        
+<page-link page-model="Model.PageViewModel" page-action="Index"></page-link>

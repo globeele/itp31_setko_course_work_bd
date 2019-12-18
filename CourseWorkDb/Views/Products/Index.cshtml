@@ -1,0 +1,56 @@
+﻿@model IndexViewModel<Product>
+
+@addTagHelper "*, CourseWorkDb"
+
+@{
+    ViewData["Title"] = "Список продукций";
+    string content = "image/jpeg";
+}
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Номер</th>
+                <th scope="col">Наименование продукции</th>
+                <th scope="col">Единица измерения</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Фото</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+            <tr onclick="window.location.href='/Products/Details/@item.Id'; return false">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeasureUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Features)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Photo)
+                </td>*@
+                <td>
+
+                    @{string src = string.Format("data:{0};base64,{1}", content,
+
+                                          Convert.ToBase64String(item.Photo));
+                    }
+
+                    <img src=" @src" />
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<page-link page-model="Model.PageViewModel" page-action="Index"></page-link>

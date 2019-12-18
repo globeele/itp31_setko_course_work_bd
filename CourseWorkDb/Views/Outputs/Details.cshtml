@@ -1,0 +1,63 @@
+﻿@model CourseWorkDb.Models.Tables.Output
+
+@{
+    ViewData["Title"] = "Выпуск продукции";
+}
+
+
+    <h4>Выпуск продукции"</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="OutputPlan" class="control-label"></label>
+                <input asp-for="OutputPlan" class="form-control" data-val-number="Пожалуйста введите число." />
+                <span asp-validation-for="OutputPlan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OutputFact" class="control-label"></label>
+                <input asp-for="OutputFact" class="form-control" />
+                <span asp-validation-for="OutputFact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quarter" class="control-label"></label>
+                <input asp-for="Quarter" class="form-control" readonly/>
+                <span asp-validation-for="Quarter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" readonly/>
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label"></label>
+                <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Редактировать" class="btn btn-primary" />
+            </div>
+        </form>
+        <form method="post" asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Удалить" class="btn btn-danger" />
+        </form>
+    </div>
+</div>
+
+<br />
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
