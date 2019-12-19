@@ -7,6 +7,6 @@ namespace CourseWorkDb.Models.Authentication
         public string Surname { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }
-        public string Email { get; set; }
+        public override string Email { get; set; }
     }
 }

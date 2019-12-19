@@ -45,7 +45,7 @@
         <tbody>
             @foreach (var item in Model.Items)
             {
-                <tr onclick="window.location.href='/Outputs/Details/@item.OutputId'; return false">
+                <tr onclick="window.location.href='/Companies/Details/@item.CompanyId'; return false">
                     <td>
                         @Html.DisplayFor(modelItem => item.CompanyName)
                     </td>
@@ -71,5 +71,5 @@
 </div>
 
 <page-link page-model="Model.PageViewModel" page-action="Comparison"
-           page-url-organization="@(Model.FilterViewModel.SelectedOutput)"
+           page-url-organization="@(Model.FilterViewModel.SelectedCompany)"
            page-url-year="@(Model.FilterViewModel.SelectedYear)"></page-link>

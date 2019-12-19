@@ -158,7 +158,9 @@ namespace CourseWorkDb.Controllers
                     a.Company.CompanyName,
                     a.Year,
                     a.Quarter,
+                    a.Product.ProductName,
                     a.Product.MeasureUnit,
+                    a.Product.ProductType,
                     Excess = (b.ReleaseFact / b.ReleasePlan) - a.OutputFact
                 }).Where(item => item.Excess > 0.0f);
 
@@ -187,6 +189,7 @@ namespace CourseWorkDb.Controllers
                 {
                     CompanyId = item.CompanyId,
                     CompanyName = item.CompanyName,
+                    ProductName = item.ProductName,
                     MeasureUnit = item.MeasureUnit,
                     Year = item.Year,
                     Quarter = item.Quarter,
@@ -226,11 +229,14 @@ namespace CourseWorkDb.Controllers
                 {
                     a.CompanyId,
                     a.Company.CompanyName,
+                    a.Product.ProductName,
+                    a.Product.ProductType,
                     a.Product.MeasureUnit,
                     a.Year,
                     a.Quarter,
-                    OutputPlan = a.ReleasePlan,
-                    Output = b.OutputFact / b.OutputPlan
+                    a.ReleasePlan,
+                    a.ReleaseFact,
+                    OutputDifference = b.OutputFact / b.OutputPlan
                 });
 
             if (company != null)
@@ -259,10 +265,11 @@ namespace CourseWorkDb.Controllers
                     CompanyId = item.CompanyId,
                     CompanyName = item.CompanyName,
                     MeasureUnit = item.MeasureUnit,
+                    ProductName = item.ProductName,
                     Year = item.Year,  
                     Quarter = item.Quarter,
-                    ReleasePlan = item.ReleasePlan,
-                    ReleaseFact = item.ReleaseFact
+                    ReleaseFact = item.ReleaseFact,
+                    ReleasePlan = item.ReleasePlan
                 }).ToListAsync();
 
             IndexViewModel<ComparisonViewModel> viewModel = new IndexViewModel<ComparisonViewModel>

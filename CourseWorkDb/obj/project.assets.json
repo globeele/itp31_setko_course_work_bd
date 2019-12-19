@@ -8205,11 +8205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asus\\Desktop\\CourseWorkRPBDIS\\CourseWorkDb\\CourseWorkDb.csproj",
+      "projectUniqueName": "D:\\itp31_setko_course_work_bd\\CourseWorkDb\\CourseWorkDb.csproj",
       "projectName": "CourseWorkDb",
-      "projectPath": "C:\\Users\\asus\\Desktop\\CourseWorkRPBDIS\\CourseWorkDb\\CourseWorkDb.csproj",
+      "projectPath": "D:\\itp31_setko_course_work_bd\\CourseWorkDb\\CourseWorkDb.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asus\\Desktop\\CourseWorkRPBDIS\\CourseWorkDb\\obj\\",
+      "outputPath": "D:\\itp31_setko_course_work_bd\\CourseWorkDb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft\\Xamarin\\NuGet\\",

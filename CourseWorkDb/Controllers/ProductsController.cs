@@ -61,7 +61,7 @@ namespace CourseWorkDb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,MeasureUnit")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,MeasureUnit, Features, Photo")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace CourseWorkDb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,MeasureUnit")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,MeasureUnit,Features,Photo")] Product product)
         {
             if (id != product.Id)
             {

@@ -10,10 +10,10 @@
 <form asp-action="Violators" method="get">
     <div class="form-row col-md-8">
         <div class="col-2">
-            <label class="control-label">Название организации </label>
+            <label class="control-label">Название предприятия </label>
         </div>
         <div class="col-4">
-            @Html.DropDownList("organization", Model.FilterViewModel.Organizations as SelectList,
+            @Html.DropDownList("organization", Model.FilterViewModel.Companies as SelectList,
                     htmlAttributes: new { @class = "form-control" })
         </div>
         <div class="col-1">
@@ -34,7 +34,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">Организация</th>
+                <th scope="col">Предприятие</th>
                 <th scope="col">Единица измерения</th>
                 <th scope="col">Превышение нормы потребления на единицу товара</th>
                 <th scope="col">Год</th>
@@ -44,9 +44,9 @@
         <tbody>
             @foreach (var item in Model.Items)
             {
-                <tr onclick="window.location.href='/Organizations/Details/@item.OrganizationId'; return false">
+                <tr onclick="window.location.href='/Companies/Details/@item.CompanyId'; return false">
                     <td>
-                        @Html.DisplayFor(modelItem => item.OrganizationName)
+                        @Html.DisplayFor(modelItem => item.CompanyName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.MeasureUnit)
@@ -67,5 +67,5 @@
 </div>
 
 <page-link page-model="Model.PageViewModel" page-action="Violators"
-           page-url-organization="@(Model.FilterViewModel.SelectedOrganization)"
+           page-url-organization="@(Model.FilterViewModel.SelectedCompany)"
            page-url-year="@(Model.FilterViewModel.SelectedYear)"></page-link>
