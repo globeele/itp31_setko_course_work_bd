@@ -5,13 +5,12 @@ namespace CourseWorkDb.Models
 {
     public partial class RationingDbContext : DbContext
     {
-        public RationingDbContext()
-        {
-        }
+        
 
         public RationingDbContext(DbContextOptions<RationingDbContext> options)
             : base(options)
         {
+
         }
 
         public virtual DbSet<Output> Outputs { get; set; }

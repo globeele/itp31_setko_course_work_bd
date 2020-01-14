@@ -11,6 +11,7 @@ namespace CourseWorkDb.Middleware
 
         public DbInitializerMiddleware(RequestDelegate next)
         {
+            //инициализация базы данных
             _next = next;
         }
 

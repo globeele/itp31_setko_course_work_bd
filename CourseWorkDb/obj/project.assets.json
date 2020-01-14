@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
+      "Aspose.Diagram/19.12.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Aspose.Diagram.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.Diagram.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.0.0": {
         "type": "package",
         "compile": {
@@ -359,6 +368,9 @@
             "rid": "win"
           }
         }
+      },
+      "Microsoft.DependencyValidation.Analyzers/0.8.0": {
+        "type": "package"
       },
       "Microsoft.EntityFrameworkCore/3.0.1": {
         "type": "package",
@@ -2567,6 +2579,27 @@
     }
   },
   "libraries": {
+    "Aspose.Diagram/19.12.0": {
+      "sha512": "bMDxsTSaxbpzvVg4HgHrAnOVTJhJ9KDkdPjo7sp/9KJOBR4lpgnTY5/LG+yQilrwKxGJoU2c8LbvRkABAKaSwA==",
+      "type": "package",
+      "path": "aspose.diagram/19.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Help/Aspose.Diagram for .NET Documentation.chm",
+        "License/thirdpartylicenses.Aspose.Diagram.for.NET.pdf",
+        "aspose.diagram.19.12.0.nupkg.sha512",
+        "aspose.diagram.nuspec",
+        "lib/net20/Aspose.Diagram.dll",
+        "lib/net20/Aspose.Diagram.xml",
+        "lib/net35/Aspose.Diagram.dll",
+        "lib/net35/Aspose.Diagram.xml",
+        "lib/net40/Aspose.Diagram.dll",
+        "lib/net40/Aspose.Diagram.xml",
+        "lib/netstandard2.0/Aspose.Diagram.dll",
+        "lib/netstandard2.0/Aspose.Diagram.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.0.0": {
       "sha512": "+rv53zsuvSYKFfW0LLswxHEXtu3fruU00AHcs1khYvnZAYi68Bdq6Ud/ukpnZsG0UjRJiz3KrfF4Rgvuogj48Q==",
       "type": "package",
@@ -2936,6 +2969,34 @@
         "runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.pdb",
         "runtimes/win/lib/netstandard2.0/Microsoft.Data.SqlClient.dll",
         "runtimes/win/lib/netstandard2.0/Microsoft.Data.SqlClient.pdb"
+      ]
+    },
+    "Microsoft.DependencyValidation.Analyzers/0.8.0": {
+      "sha512": "hLCSp9IqDdd2bZn05gzS1gJ3ANoQvJ6ms93Deqis3VnWfm+FC7YzPkGvp6NcDJ3vjKTAV8sNjYd/PhHaqe/DTA==",
+      "type": "package",
+      "path": "microsoft.dependencyvalidation.analyzers/0.8.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/Microsoft.DependencyValidation.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/de/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/es/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/fr/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/it/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/ja/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/ko/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/pl/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/pt-BR/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/ru/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/tr/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/zh-HANS/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "analyzers/dotnet/zh-HANT/Microsoft.DependencyValidation.Analyzers.resources.dll",
+        "microsoft.dependencyvalidation.analyzers.0.8.0.nupkg.sha512",
+        "microsoft.dependencyvalidation.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "Microsoft.EntityFrameworkCore/3.0.1": {
@@ -8189,7 +8250,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "Aspose.Diagram >= 19.12.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.0.0",
+      "Microsoft.DependencyValidation.Analyzers >= 0.8.0",
       "Microsoft.EntityFrameworkCore >= 3.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.1",
@@ -8241,9 +8304,17 @@
     "frameworks": {
       "netcoreapp3.0": {
         "dependencies": {
+          "Aspose.Diagram": {
+            "target": "Package",
+            "version": "[19.12.0, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "Microsoft.DependencyValidation.Analyzers": {
+            "target": "Package",
+            "version": "[0.8.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

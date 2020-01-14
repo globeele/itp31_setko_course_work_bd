@@ -638,7 +638,6 @@ C:\Users\asus\Desktop\CourseWorkRPBDIS\CourseWorkDb\obj\Debug\netcoreapp3.0\Cour
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\CourseWorkDb.csprojAssemblyReference.cache
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\staticwebassets\CourseWorkDb.StaticWebAssets.Manifest.cache
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\staticwebassets\CourseWorkDb.StaticWebAssets.xml
-D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\CourseWorkDb.MvcApplicationPartsAssemblyInfo.cache
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\CourseWorkDb.RazorAssemblyInfo.cache
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\CourseWorkDb.RazorAssemblyInfo.cs
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\CourseWorkDb.AssemblyInfoInputs.cache

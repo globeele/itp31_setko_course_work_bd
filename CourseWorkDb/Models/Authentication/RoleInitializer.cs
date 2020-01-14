@@ -8,11 +8,11 @@ namespace CourseWorkDb.Models.Authentication
         public static async Task InitializeAsync(UserManager<User> userManager, 
             RoleManager<IdentityRole> roleManager)
         {
-            string adminEmail = "nsetko@bk.ru";
+            string adminEmail = "admin@gmail.com";
             string adminSurname = "Сетко";
             string adminName = "Анастасия";
             string adminMiddleName = "Игоревна";
-            string adminPhoneNumber = "+375445487111";
+            string adminPhoneNumber = "375445487111";
             string adminPassword = "1111";
 
             if (await roleManager.FindByNameAsync(Roles.Admin) == null)

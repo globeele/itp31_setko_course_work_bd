@@ -43,9 +43,17 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Aspose.Diagram": {
+              "target": "Package",
+              "version": "[19.12.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.DependencyValidation.Analyzers": {
+              "target": "Package",
+              "version": "[0.8.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

@@ -5,6 +5,7 @@ namespace CourseWorkDb.Models.Tables
     public partial class ProductType
     {
        
+        
         [Display(Name = "Номер")]
         public int Id { get; set; }
 
