@@ -796,3 +796,5 @@ D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\Razor\Views\P
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\Razor\Views\ProductTypes\Details.cshtml.g.cs
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\Razor\Views\ProductTypes\Edit.cshtml.g.cs
 D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\Razor\Views\ProductTypes\Index.cshtml.g.cs
+D:\itp31_setko_course_work_bd\CourseWorkDb\bin\Debug\netcoreapp3.0\Aspose.Diagram.dll
+D:\itp31_setko_course_work_bd\CourseWorkDb\obj\Debug\netcoreapp3.0\CourseWorkDb.MvcApplicationPartsAssemblyInfo.cache
